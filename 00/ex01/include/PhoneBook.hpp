@@ -13,7 +13,7 @@ class PhoneBook
     PhoneBook(void);
     ~PhoneBook(void);
 
-    void    addContact(void);
+    void    addContact(Contact contact);
     Contact getContact(int i);
 };
 
