@@ -2,7 +2,7 @@ NAME		= MyAwesomePhoneBook
 SRCS		= src/main.cpp src/PhoneBook.cpp src/Contact.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+FLAGS		= -Wall -Wextra -Werror -std=c++98 -g
 COMPILER	= c++
 INCLUDE		= -I include/
 

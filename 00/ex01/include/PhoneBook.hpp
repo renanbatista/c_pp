@@ -13,8 +13,9 @@ class PhoneBook
     PhoneBook(void);
     ~PhoneBook(void);
 
-    void    addContact(Contact contact);
+    void    addContact(void);
     Contact getContact(int i);
+    std::string getInfo(std::string text) const;
 };
 
 #endif
