@@ -2,6 +2,9 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <iostream>
+#include <cstdlib>
+#include <iomanip>
 
 // Color codes as global variables
 const std::string RESET  = "\033[0m";
@@ -37,6 +40,7 @@ class Contact
     void setNickname(std::string nickName_);
     void setPhoneNumber(std::string phone_);
     void setDarkestSecret(std::string darkestSecret_);
+    void printContact(void);
 };
 
 #endif

@@ -16,6 +16,7 @@ class PhoneBook
     void    addContact(void);
     Contact getContact(int i);
     std::string getInfo(std::string text) const;
+    void    printAllContacts(void);
 };
 
 #endif
