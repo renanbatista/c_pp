@@ -40,7 +40,23 @@ PhoneBook::getInfo(std::string text) const
         if (input.empty())
             std::cout << RED << "Invalid input" << RESET << std::endl;
     } while (input.empty());
-    std::cout << input << std::endl;
+    if(text.compare("Phone number: ") == 0)
+    {
+        if(std::find_if(input.begin(), input.end(), isdigit) != input.end())
+        for (int i = 0; i < input.size(); i++)
+        {
+            if (!isdigit(input[i]))
+            {
+                std::cout << RED << "Invalid input, must be a number" << RESET << std::endl;
+                return ("");
+            }
+        }
+        if (input.size() > 11)
+        {
+            std::cout << RED << "Invalid input, must be less than 11 digits" << RESET << std::endl;
+            return ("");
+        }
+    }
     return (input);
 }
 
@@ -56,7 +72,7 @@ PhoneBook::printAllContacts(void)
     std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
     for (int i = 0; i < 8; i++)
     {
-        if (!contacts[i].getFirstName().empty())
+        if (contacts[i].getFirstName().empty() == 0)
         {
             std::cout.clear();
             std::cout << std::setw(10) << std::right << i << "|";
@@ -76,18 +92,17 @@ PhoneBook::printAllContacts(void)
     }
     int index;
     std::cout << "Enter the index of the contact to display: " << std::endl;
-    std::cin.ignore();
     std::cin >> index;
-    if (index < 0 || index >= 8)
+
+    if (std::cin.fail() || (index < 0 || index > 7))
         std::cout << RED << "Invalid index" << std::endl;
     else
     {
-        if (!contacts[index].getFirstName().empty())
-        {
+        if (contacts[index].getFirstName().empty() == 0)
             contacts[index].printContact();
-            std::cout << std::endl << "Last: " << contacts[index].getLastName() << std::endl;
-        }
         else
-            std::cout << std::endl << "Contact not found" << std::endl;
+            std::cout << RED << std::endl << "Contact not found" << std::endl;
     }
+    std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

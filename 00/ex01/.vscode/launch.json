@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Launch with LLDB",
-            "type": "lldb",
+            "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/MyAwesomePhoneBook",
             "args": [""],

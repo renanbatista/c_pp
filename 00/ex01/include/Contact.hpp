@@ -5,6 +5,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <limits>
+#include <algorithm>
 
 // Color codes as global variables
 const std::string RESET  = "\033[0m";

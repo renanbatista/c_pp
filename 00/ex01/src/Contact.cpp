@@ -67,9 +67,9 @@ Contact::setDarkestSecret(std::string darkestSecret)
 void
 Contact::printContact(void)
 {
-    std::cout << std::endl << RESET << "First name:       " << BLUE << firstName_ << std::endl;
-    std::cout << RESET << "Last name:        " << BLUE << lastName_ << std::endl;
-    std::cout << RESET << "Nickname:         " << BLUE << nickName_ << std::endl;
-    std::cout << RESET << "Phone number:     " << BLUE << phone_ << std::endl;
-    std::cout << RESET << "Darkest secret:   " << BLUE << darkestSecret_ << std::endl;
+    std::cout << std::endl << RESET << "First name:     " << BLUE << firstName_ << std::endl;
+    std::cout << RESET << "Last name:      " << BLUE << lastName_ << std::endl;
+    std::cout << RESET << "Nickname:       " << BLUE << nickName_ << std::endl;
+    std::cout << RESET << "Phone number:   " << BLUE << phone_ << std::endl;
+    std::cout << RESET << "Darkest secret: " << BLUE << darkestSecret_ << std::endl;
 }
