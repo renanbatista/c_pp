@@ -3,7 +3,7 @@ SRCS		= ./megaphone.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
-COMPILER	= clang++
+COMPILER	= c++
 
 .cpp.o:
 	${COMPILER} ${FLAGS} -c $< -o ${<:.cpp=.o}
@@ -21,9 +21,4 @@ clean:
     
 re: fclean all
 
-test: re
-	./megaphone "shhhhh... I think the students are asleep..."
-	./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
-	./megaphone
-
-.PHONY: all clean fclean re .cpp.o test
+.PHONY: all clean fclean re .cpp.o

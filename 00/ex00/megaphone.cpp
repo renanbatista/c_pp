@@ -6,8 +6,6 @@ int main(int argc, char **argv)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     else
     {
-        std::string fullStr = "";
-
         for (int i = 1; i < argc; i++)
         {
             std::string str(argv[i]);
