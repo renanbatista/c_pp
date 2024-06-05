@@ -1,4 +1,5 @@
 #include "../include/PhoneBook.hpp"
+
 int
 main(void)
 {
@@ -11,7 +12,7 @@ main(void)
     std::cout << "--------------------------------" << RESET << std::endl;
     while (true)
     {
-        std::cout << YELLOW <<"\nSelect: ADD or SEARCH or EXIT" << std::endl << RESET;
+        std::cout << YELLOW << "\nSelect: ADD or SEARCH or EXIT" << std::endl << RESET;
         std::getline(std::cin, input);
         if (input.compare("EXIT") == 0)
         {

@@ -60,9 +60,12 @@ PhoneBook::getInfo(std::string text) const
 void
 PhoneBook::printAllContacts(void)
 {
-    std::cout << std::setw(10) << std::right << "Index" << "|";
-    std::cout << std::setw(10) << std::right << "First name" << "|";
-    std::cout << std::setw(10) << std::right << "Last name" << "|";
+    std::cout << std::setw(10) << std::right << "Index"
+              << "|";
+    std::cout << std::setw(10) << std::right << "First name"
+              << "|";
+    std::cout << std::setw(10) << std::right << "Last name"
+              << "|";
     std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
     for (int i = 0; i < 8; i++)
     {

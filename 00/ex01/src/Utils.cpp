@@ -1,4 +1,5 @@
 #include "../include/Utils.hpp"
+
 bool
 all_is_digits(const std::string& input)
 {
