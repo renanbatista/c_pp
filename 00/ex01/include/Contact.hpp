@@ -1,12 +1,11 @@
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-#include <string>
-#include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <iostream>
 #include <limits>
-#include <algorithm>
+#include <string>
 
 // Color codes as global variables
 const std::string RESET  = "\033[0m";

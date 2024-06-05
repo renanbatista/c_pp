@@ -1,5 +1,6 @@
 #include "../include/PhoneBook.hpp"
 #include "../include/Contact.hpp"
+#include "../include/Utils.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -33,29 +34,25 @@ std::string
 PhoneBook::getInfo(std::string text) const
 {
     std::string input;
-    std::cout << GRAY << text << std::endl << RESET << "           ";
-    do
+
+    while (true)
     {
-        std::getline(std::cin, input);
-        if (input.empty())
-            std::cout << RED << "Invalid input" << RESET << std::endl;
-    } while (input.empty());
-    if(text.compare("Phone number: ") == 0)
-    {
-        if(std::find_if(input.begin(), input.end(), isdigit) != input.end())
-        for (int i = 0; i < input.size(); i++)
+        do
         {
-            if (!isdigit(input[i]))
-            {
-                std::cout << RED << "Invalid input, must be a number" << RESET << std::endl;
-                return ("");
-            }
-        }
-        if (input.size() > 11)
+            std::cout << GRAY << text << RESET << std::endl;
+            std::getline(std::cin, input);
+            if (input.empty())
+                std::cout << RED << "Empty input" << RESET << std::endl;
+        } while (input.empty());
+        if (text.compare("Phone number: ") == 0)
         {
-            std::cout << RED << "Invalid input, must be less than 11 digits" << RESET << std::endl;
-            return ("");
+            if (all_is_digits(input) && (input.size() == 10 || input.size() == 11))
+                break;
+            std::cout << RED << "Invalid input, must be a number and must be 10 or 11 digits."
+                      << RESET << std::endl;
         }
+        else
+            break;
     }
     return (input);
 }
@@ -63,12 +60,9 @@ PhoneBook::getInfo(std::string text) const
 void
 PhoneBook::printAllContacts(void)
 {
-    std::cout << std::setw(10) << std::right << "Index"
-              << "|";
-    std::cout << std::setw(10) << std::right << "First name"
-              << "|";
-    std::cout << std::setw(10) << std::right << "Last name"
-              << "|";
+    std::cout << std::setw(10) << std::right << "Index" << "|";
+    std::cout << std::setw(10) << std::right << "First name" << "|";
+    std::cout << std::setw(10) << std::right << "Last name" << "|";
     std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
     for (int i = 0; i < 8; i++)
     {
@@ -104,5 +98,5 @@ PhoneBook::printAllContacts(void)
             std::cout << RED << std::endl << "Contact not found" << std::endl;
     }
     std::cin.clear();
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
