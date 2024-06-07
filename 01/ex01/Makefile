@@ -1,5 +1,5 @@
-NAME		= Account
-SRCS		= src/Account.cpp src/tests.cpp
+NAME		= zombie_horder
+SRCS		= src/main.cpp src/Zombie.cpp src/zombieHorde.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98

@@ -1,4 +1,4 @@
-NAME		= zombie
+NAME		= brainz
 SRCS		= src/main.cpp src/Zombie.cpp src/newZombie.cpp src/randomChump.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f

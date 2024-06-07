@@ -1,5 +1,5 @@
-NAME		= Account
-SRCS		= src/Account.cpp src/tests.cpp
+NAME		= unnecessary
+SRCS		= src/main.cpp src/Weapon.cpp src/HumanA.cpp src/HumanB.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98

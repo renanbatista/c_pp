@@ -16,18 +16,12 @@ main(void)
 
     delete boo;
 
-    std::cout << "\n" << std::endl;
-
-    std::cout << CYAN << "---------> TESTING STACK ALOCCATION <---------" << std::endl;
-    std::cout << "\nCalling randomChump" << std::endl;
-    std::cout << "Implicit announce in randomChump function" << std::endl;
-    std::cout << "Implicit delete in randomChump function\n" << std::endl;
+    std::cout << CYAN << "-----> TESTING STACK ALOCCATION <-----" << std::endl;
+    std::cout << GREEN << "\nCalling randomChump('Paulo')" << RESET << std::endl;
 
     randomChump("Paulo");
 
-    std::cout << "\n" << std::endl;
-
-    std::cout << CYAN << "---------> TESTING STACK ALOCCATION <---------" << std::endl;
+    std::cout << CYAN << "-----> TESTING STACK ALOCCATION <-----" << std::endl;
     std::cout << "\nInstance of zombie" << std::endl;
 
     Zombie foo("Foo");
