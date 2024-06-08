@@ -23,13 +23,13 @@ HumanA::getWeapon(void) const
 void
 HumanA::setName(std::string name)
 {
-    this->_name = name;
+    _name = name;
 }
 
 void
 HumanA::setWeapon(Weapon& weapon)
 {
-    this->_weapon = weapon;
+    _weapon = weapon;
 }
 
 void
