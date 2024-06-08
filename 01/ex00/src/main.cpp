@@ -1,4 +1,4 @@
-#include "Zombie.hpp"
+#include "../include/Zombie.hpp"
 
 int
 main(void)
@@ -22,7 +22,7 @@ main(void)
     randomChump("Paulo");
 
     std::cout << CYAN << "-----> TESTING STACK ALOCCATION <-----" << std::endl;
-    std::cout << "\nInstance of zombie" << std::endl;
+    std::cout << GREEN << "\nInstance of zombie" << std::endl;
 
     Zombie foo("Foo");
 
