@@ -1,5 +1,5 @@
-NAME		= Account
-SRCS		= src/Account.cpp src/tests.cpp
+NAME		= harl
+SRCS		= src/main.cpp src/Harl.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
