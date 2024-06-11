@@ -1,4 +1,4 @@
-BasedOnStyle: Mozilla
+BasedOnStyle: Google
 IndentWidth: 4
 TabWidth: 4
 
@@ -32,3 +32,7 @@ AlignConsecutiveDeclarations: true
 AlignEscapedNewlines: Left
 AlignTrailingComments: true
 AlignArrayOfStructures: Left
+
+# Custom settings
+AccessModifierOffset: -1
+IndentAccessModifiers: true

@@ -1,7 +1,6 @@
 #include "../include/Harl.hpp"
 
-int
-main()
+int main()
 {
     Harl harl;
 

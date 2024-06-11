@@ -19,6 +19,7 @@ class Harl
         Harl(void);
         ~Harl(void);
         void complain(std::string level);
+        void filter(std::string level);
 
     private:
         void debug(void);
@@ -27,4 +28,4 @@ class Harl
         void error(void);
 };
 
-#endif  // HARL_HPP
+#endif

@@ -3,6 +3,7 @@
 Harl::Harl(void) {}
 
 Harl::~Harl(void) {}
+
 void Harl::complain(std::string level)
 {
     void (Harl::*funcPtr[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
@@ -20,13 +21,46 @@ void Harl::complain(std::string level)
     std::cout << PURPLE << "Invalid level: " << level << std::endl;
 }
 
+void Harl::filter(std::string level)
+{
+    int         index    = -1;
+    std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+    for (int i = 0; i < 4; i++)
+    {
+        if (level == levels[i])
+        {
+            index = i;
+            break;
+        }
+    }
+
+    switch (index)
+    {
+        case 0:
+            debug();
+            // fall through
+        case 1:
+            info();
+            // fall through
+        case 2:
+            warning();
+            // fall through
+        case 3:
+            error();
+            break;
+        default:
+            std::cout << PURPLE << "[ Probably complaining about insignificant problems ]"
+                      << std::endl;
+    }
+}
+
 void Harl::debug(void)
 {
-    std::cout
-        << GREEN << "[DEBUG] " << GRAY
-        << "  I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup "
-           "burger. I really do!"
-        << std::endl;
+    std::cout << GREEN << "[DEBUG] " << GRAY
+              << "  I love having extra bacon for my "
+                 "7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!"
+              << std::endl;
 }
 
 void Harl::info(void)
