@@ -13,9 +13,9 @@ Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed &Fixed::operator=(Fixed const &rSym) {
+Fixed &Fixed::operator=(Fixed const &obj) {
     std::cout << "Copy assignement operator called" << std::endl;
-    _value = rSym.getRawBits();
+    _value = obj.getRawBits();
     return *this;
 }
 
