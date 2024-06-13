@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-#include <math.h>
+#include <cmath>
 
 Fixed::Fixed() : _value(0) {}
 
