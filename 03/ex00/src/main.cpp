@@ -1,37 +1,25 @@
 #include "../include/ClapTrap.hpp"
 
 int main(void) {
-    std::cout << "\n------------OBJECT CONSTRUCTORS-------------\n" << std::endl;
-	
-    // Default Constructor
+    std::cout << YELLOW << "\n-------> OBJECT CONSTRUCTORS\n" << RESET << std::endl;
+
     ClapTrap none;
-    // String Constructors
-    ClapTrap Ally("Ally");
-    ClapTrap Enemy("Enemy");
+    ClapTrap player_I("player_I");
+    ClapTrap player_II("player_II");
+    ClapTrap copy_player(player_I);
 
-    // Copy constructor
-    ClapTrap Copy(Ally);
+    none = player_II;
 
-    // Copy Assignment
-    none = Enemy;
+    std::cout << YELLOW << "\n-------> OBJECT OWN METHODS\n" << RESET << std::endl;
+    player_I.attack("player_II");
 
-    std::cout << "\n------------OBJECT OWN METHODS-------------\n" << std::endl;
-    // ClapTrap Ally attack ClapTrap Enemy
-    Ally.attack("Enemy");
-
-    // ClapTrap Enemy gets damage from ClapTrap Enemy and Repairs
-    Enemy.takeDamage(Ally.getAttackDamage());
-    Enemy.beRepaired(20);
-
-    // ClapTrap Enemy attack ClapTrap Ally
-    Enemy.attack("Ally");
-
-    // ClapTrap Ally gets damage from ClapTrap Enemy. Ally Can´t Repair
-    Ally.takeDamage(10);
-    Ally.beRepaired(30);
-
-    // Ally Can´t Attack
-    Ally.attack("Enemy");
-    std::cout << "\n------------OBJECT DESTRUCTOR-------------\n" << std::endl;
+    player_II.takeDamage(player_I.getAttackDamage());
+    player_II.beRepaired(20);
+    std::cout << GRAY << "Player II Hit Point = " <<player_II.getHitPoints() << RESET << std::endl<< std::endl;
+    player_II.attack("player_I");
+    player_I.takeDamage(player_II.getAttackDamage());
+    player_I.beRepaired(30);
+    player_I.attack("player_II");
+    std::cout << YELLOW << "\n-------> OBJECT DESTRUCTOR\n" << RESET << std::endl;
     return (0);
 }

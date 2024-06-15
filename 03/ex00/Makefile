@@ -1,5 +1,5 @@
-NAME		= fixedPoint
-SRCS		= src/.cpp
+NAME		= clapTrap
+SRCS		= src/ClapTrap.cpp src/main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
