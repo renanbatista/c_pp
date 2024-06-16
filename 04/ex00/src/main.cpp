@@ -1,25 +1,36 @@
-#include "../include/ClapTrap.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main(void) {
-    std::cout << YELLOW << "\n-------> OBJECT CONSTRUCTORS\n" << RESET << std::endl;
+    std::cout << BLUE << std::endl;
+    std::cout << "----------> SUBJECT TEST\n";
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
 
-    ClapTrap none;
-    ClapTrap player_I("player_I");
-    ClapTrap player_II("player_II");
-    ClapTrap copy_player(player_I);
+    std::cout << j->getType() << std::endl;
+    std::cout << i->getType() << std::endl;
 
-    none = player_II;
+    i->makeSound();
+    j->makeSound();
+    meta->makeSound();
 
-    std::cout << YELLOW << "\n-------> OBJECT OWN METHODS\n" << RESET << std::endl;
-    player_I.attack("player_II");
+    std::cout << BLUE << std::endl << "----------> WRONG ANIMALS TESTS" << std::endl;
 
-    player_II.takeDamage(player_I.getAttackDamage());
-    player_II.beRepaired(20);
-    std::cout << GRAY << "Player II Hit Point = " <<player_II.getHitPoints() << RESET << std::endl<< std::endl;
-    player_II.attack("player_I");
-    player_I.takeDamage(player_II.getAttackDamage());
-    player_I.beRepaired(30);
-    player_I.attack("player_II");
-    std::cout << YELLOW << "\n-------> OBJECT DESTRUCTOR\n" << RESET << std::endl;
-    return (0);
+    const WrongAnimal* wrongAnimal = new WrongAnimal();
+    const WrongAnimal* wrongCat = new WrongCat();
+    std::cout << wrongCat->getType() << std::endl;
+    wrongCat->makeSound();
+    wrongAnimal->makeSound();
+
+    delete meta;
+    delete j;
+    delete i;
+    delete wrongAnimal;
+    delete wrongCat;
+
+    return 0;
 }
