@@ -1,8 +1,10 @@
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 
-#include <array>
+#include <format.hpp>
 #include <iostream>
+#include <stdlib.h>
+
 class Brain {
     public:
         Brain();

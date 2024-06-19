@@ -21,7 +21,6 @@ BreakConstructorInitializersBeforeComma: true
 AlwaysBreakTemplateDeclarations: Yes
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortEnumsOnASingleLine: false
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLambdasOnASingleLine: false
 AllowShortLoopsOnASingleLine: false

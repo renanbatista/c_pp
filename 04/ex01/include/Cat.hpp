@@ -7,17 +7,18 @@
 #include "Brain.hpp"
 
 class Cat : public Animal {
-    public:
-        Cat(void);
-        ~Cat(void);
-        Cat(Cat const &copy);
-        
-        Cat &operator=(Cat const &copy);
+   private:
+    Brain* _brain;
 
-        void makeSound(void) const;
+   public:
+    Cat(void);
+    Cat(Cat const& copy);
+    ~Cat(void);
 
-    private:
-        Brain *CatBrain;
+    Cat& operator=(Cat const& other);
+
+    void        makeSound(void) const;
+    std::string getIdea(int n) const;
 };
 
 #endif
