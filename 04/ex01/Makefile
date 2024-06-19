@@ -1,5 +1,5 @@
-NAME		= scavTrap
-SRCS		= src/main.cpp
+NAME		= brasin
+SRCS		= src/main.cpp src/Cat.cpp src/Dog.cpp src/Animal.cpp src/Brain.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98

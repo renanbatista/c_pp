@@ -1,23 +1,23 @@
+#include "../include/Animal.hpp"
+#include "../include/Brain.hpp"
+#include "../include/Cat.hpp"
+#include "../include/Dog.hpp"
+#include "../include/WrongAnimal.hpp"
+#include "../include/WrongCat.hpp"
 
-#include "../include/ScavTrap.hpp"
+int main() {
+    Animal *array[100];
+    int     i = 0;
 
-int main(void) {
-    std::cout << YELLOW << "\n-------> OBJECT CONSTRUCTORS\n" << RESET << std::endl;
+    while (i < 50)
+        array[i++] = new Dog();
+    while (i < 100)
+        array[i++] = new Cat();
 
-    ScavTrap goodScav("GoodScav");
-    ScavTrap evilScav("EvilScav");
-    ScavTrap scav3;
+    array[4]->makeSound();
+    array[72]->makeSound();
+    for (i = 0; i < 100; i++)
+        delete array[i];
 
-    scav3 = goodScav;
-
-    std::cout << YELLOW << "\n-------> OBJECT OWN METHODS\n" << RESET << std::endl;
-    goodScav.attack("EvilScav");
-    evilScav.takeDamage(goodScav.getAttackDamage());
-    evilScav.attack("GoodScav");
-    goodScav.takeDamage(evilScav.getAttackDamage());
-    goodScav.beRepaired(10);
-    goodScav.guardGate();
-
-    std::cout << YELLOW << "\n-------> OBJECT DESTRUCTOR\n" << RESET << std::endl;
-    return (0);
+    return 0;
 }
