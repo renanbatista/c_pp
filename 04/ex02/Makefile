@@ -1,5 +1,5 @@
-NAME		= fragTrap
-SRCS		= src/main.cpp
+NAME		= abstract
+SRCS		= src/main.cpp src/Cat.cpp src/Dog.cpp src/AAnimal.cpp src/Brain.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
