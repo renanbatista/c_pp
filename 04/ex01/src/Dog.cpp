@@ -1,4 +1,4 @@
-#include "Dog.hpp"
+#include "../include/Dog.hpp"
 
 Dog::Dog(void) : Animal("Dog") {
     std::cout << YELLOW << "Dog was created." << std::endl << RESET;
