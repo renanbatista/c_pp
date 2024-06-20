@@ -8,10 +8,11 @@ Dog::Dog(void) : Animal("Dog") {
 
 Dog::Dog(Dog const &copy) : Animal(copy) {
     std::cout << GRAY << "A copy Dog was created." << std::endl << RESET;
-    *this = copy;
+    this->type = copy.type;
+	this->_brain = new Brain(*copy._brain);
 }
 
-Dog::~Dog(void) {
+Dog::~Dog(void) {   
     std::cout << RED << "Dog was destroyed." << std::endl << RESET;
     delete this->_brain;
 }
@@ -19,7 +20,8 @@ Dog::~Dog(void) {
 Dog &Dog::operator=(Dog const &other) {
     std::cout << GREEN << "Dog copied by assignment operator." << std::endl << RESET;
     if (this != &other) {
-        type         = other.type;
+        this->type   = other.type;
+        delete _brain;
         this->_brain = new Brain(*other._brain);
     }
     return *this;
