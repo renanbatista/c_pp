@@ -1,5 +1,5 @@
-NAME		= polymorphism
-SRCS		= src/main.cpp src/Cat.cpp src/Dog.cpp src/Animal.cpp src/WrongAnimal.cpp src/WrongCat.cpp
+NAME		= bureaucrat
+SRCS		= src/main.cpp src/Bureaucrat.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
