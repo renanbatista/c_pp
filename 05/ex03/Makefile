@@ -1,5 +1,5 @@
-NAME		= polymorphism
-SRCS		= src/main.cpp src/Cat.cpp src/Dog.cpp src/Animal.cpp src/WrongAnimal.cpp src/WrongCat.cpp
+NAME		= inter
+SRCS		= src/main.cpp src/Bureaucrat.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp src/Intern.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -16,7 +16,8 @@ all: $(NAME)
     
 fclean: clean
 	$(RM) $(NAME)
-    
+	$(RM) F1_shrubbery 
+	$(RM) Amazon_shrubbery 
 clean:
 	$(RM) -f $(OBJS)
     
