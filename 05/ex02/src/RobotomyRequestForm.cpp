@@ -25,7 +25,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
     throw(FormNotSignedException, GradeTooLowException)
 {
     AForm::execute(executor);
-    srand(time(0));
+    
     if (rand() % 2 == 0)
     {
         std::cout << BLUE << this->_target << " - RobotomyRequestForm  successfully!" << RESET

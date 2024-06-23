@@ -1,7 +1,5 @@
-NAME		= form
-SRCS		= src/main.cpp src/Bureaucrat.cpp src/AForm.cpp \ 
-			src/ShrubberyCreationForm.cpp src/RobotomyRequestForm.cpp \  
-			src/PresidentialPardonForm.cpp Tests.cpp
+NAME		= presidential
+SRCS		= src/main.cpp src/Bureaucrat.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -18,7 +16,7 @@ all: $(NAME)
     
 fclean: clean
 	$(RM) $(NAME)
-    
+	$(RM) F1_shrubbery    
 clean:
 	$(RM) -f $(OBJS)
     
