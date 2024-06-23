@@ -1,5 +1,7 @@
 NAME		= form
-SRCS		= src/main.cpp src/Bureaucrat.cpp src/Form.cpp
+SRCS		= src/main.cpp src/Bureaucrat.cpp src/AForm.cpp \ 
+			src/ShrubberyCreationForm.cpp src/RobotomyRequestForm.cpp \  
+			src/PresidentialPardonForm.cpp Tests.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98

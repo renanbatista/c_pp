@@ -1,17 +1,21 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include <cstdlib>
+#include <ctime>
 #include <exception>
+#include <fstream>
 #include <iostream>
+#include <stdexcept>
 #include <string>
 
+#include "AForm.hpp"
 #include "format.hpp"
-#include "Form.hpp"
 
 #define GRADE_MAX 1
 #define GRADE_MIN 150
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -20,19 +24,6 @@ class Bureaucrat
     int               _grade;
 
    public:
-    Bureaucrat(void);
-    Bureaucrat(std::string const &name, int grade);
-    Bureaucrat(Bureaucrat const &copy);
-    ~Bureaucrat(void);
-
-    Bureaucrat &operator=(Bureaucrat const &other);
-
-    std::string const getName(void) const;
-    int               getGrade(void) const;
-    void              upGrade(void);
-    void              downGrade(void);
-    void              signForm(Form &form);
-
     class GradeTooHighException : public std::exception
     {
        public:
@@ -44,6 +35,21 @@ class Bureaucrat
        public:
         virtual const char *what() const throw();
     };
+
+    Bureaucrat(void);
+    Bureaucrat(std::string const &name, int grade) throw(GradeTooHighException,
+                                                         GradeTooLowException);
+    Bureaucrat(Bureaucrat const &copy);
+    ~Bureaucrat(void);
+
+    Bureaucrat &operator=(Bureaucrat const &other);
+
+    std::string const getName(void) const;
+    int               getGrade(void) const;
+    void              upGrade(void);
+    void              downGrade(void);
+    void              signForm(AForm &form);
+    void              executeForm(AForm const &form);
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &actual);

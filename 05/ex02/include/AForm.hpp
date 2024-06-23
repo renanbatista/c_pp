@@ -1,11 +1,11 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
    private:
     std::string const _name;
@@ -14,10 +14,10 @@ class Form
     int const         _gradeExec;
 
    public:
-    Form(void);
-    Form(std::string const &name, int gradeSign, int gradeExec);
-    Form(Form const &copy);
-    ~Form(void);
+    AForm(void);
+    AForm(std::string const &name, int gradeSign, int gradeExec);
+    AForm(Form const &copy);
+    virtual ~AForm(void);
 
     Form &operator=(Form const &other);
 
@@ -39,6 +39,15 @@ class Form
        public:
         virtual const char *what() const throw();
     };
+
+    class FormNotSignedException : public std::exception
+    {
+       public:
+        virtual const char *what() const throw();
+    };
+
+    virtual void execute(Bureaucrat const &executor) const
+        throw(FormNotSignedException, GradeTooLowException) = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, Form const &form);
