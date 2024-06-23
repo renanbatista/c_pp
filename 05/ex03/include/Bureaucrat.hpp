@@ -54,6 +54,5 @@ class Bureaucrat
 
 std::ostream&
 operator<<(std::ostream& out, Bureaucrat const& actual);
-Add also a beSigned() member function to the Form that takes a Bureaucrat as
-parameter.
+
 #endif
