@@ -99,9 +99,10 @@ void pseudoConvert(const std::string &input) {
 bool isOthersLetters(const std::string &input) {
     for (std::string::const_iterator it = input.begin(); it != input.end(); ++it)
     {
-        if (!((*it >= '0' && *it <= '9') || *it == '.' || *it == 'f'))
+        if (*it < '0' && *it > '9')
         {
-            return false;
+            if (*it != '.' && *it == 'f')
+            return true;
         }
     }
     return false;
