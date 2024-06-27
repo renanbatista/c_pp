@@ -11,6 +11,9 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <cerrno>
+#include <cmath>
+#include <limits>
 
 class ScalarConverter {
     public:
