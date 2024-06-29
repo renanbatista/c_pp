@@ -99,9 +99,11 @@ void pseudoConvert(const std::string &input) {
 bool isOthersLetters(const std::string &input) {
     for (std::string::const_iterator it = input.begin(); it != input.end(); ++it)
     {
-        if (*it < '0' && *it > '9')
-        {
-            if (*it != '.' && *it == 'f')
+        if (*it >= '0' && *it <= '9')
+            continue;
+        else if (*it != '.' && *it != 'f')
+        {         
+            std::cout << "Error: invalid parameter!!!" << std::endl;
             return true;
         }
     }
@@ -111,7 +113,6 @@ bool isOthersLetters(const std::string &input) {
 void ScalarConverter::convert(std::string input) {
     size_t decimalPos = input.find('.');
     size_t floatPos = input.find('f');
-    bool   isOthersL = isOthersLetters(input);
 
     if (input == "-inf" || input == "+inf" || input == "nan" || input == "-inff" ||
         input == "+inff" || input == "nanf")
@@ -120,11 +121,9 @@ void ScalarConverter::convert(std::string input) {
         charConvert(input);
     else if (decimalPos != std::string::npos)
     {
-        if (isOthersL)
-        {
-            std::cout << "Error: invalid parameter!!!" << std::endl;
+        if (isOthersLetters(input))
             return;
-        }
+            
         // calc decimal precision after point
         size_t decimalPrecision = input.length() - input.find('.') - 1;
 
