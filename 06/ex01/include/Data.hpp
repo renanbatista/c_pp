@@ -1,21 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 20:41:49 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/02 21:14:14 by macarval         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef _DATA_HPP_
 #define _DATA_HPP_
 
 #include <iostream>
-
-// Color codes as global variables
 #include "format.hpp"
 
 class Data {
