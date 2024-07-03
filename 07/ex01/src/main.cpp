@@ -1,6 +1,7 @@
 #include "iter.hpp"
 
-int main(void) {
+int main(void)
+{
     std::srand(static_cast<unsigned int>(std::time(0)));
     std::cout << MAGENTA << "-----> ITER TESTS" << std::endl;
     std::cout << CYAN << "INT TEST" << RESET << std::endl;
@@ -16,7 +17,7 @@ int main(void) {
         std::string arr[] = {"one", "two", "three", "four", "five"};
         size_t      size = sizeof(arr) / sizeof(arr[0]);
 
-        ::iter(arr, size, &debug<std::string>);
+        ::iter(arr, size, &printMsg<std::string>);
         std::cout << std::endl;
     }
 
