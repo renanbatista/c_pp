@@ -1,4 +1,4 @@
-NAME		= iter
+NAME		= span
 SRCS		= $(wildcard ./src/*.cpp)
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
