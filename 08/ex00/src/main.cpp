@@ -3,8 +3,8 @@
 int main(void)
 {
     std::cout << MAGENTA "-----> EASYFIND TESTS" << std::endl << std::endl;
-    std::cout << CYAN "VECTOR TEST" << std::endl;
-    std::cout << "Add 2, 17, 5, 47, 9 in vector. Print all elements" << std::endl << YELLOW;
+    std::cout << CYAN "## VECTOR TEST" << std::endl;
+    std::cout << "Add 2, 17, 5, 47, 9 in vector. Print all elements" << std::endl; /*  */
     std::cout << "Find element 17 in vector" << std::endl << YELLOW;
     try {
         std::vector<int> vec;
@@ -27,7 +27,7 @@ int main(void)
     }
 
     std::cout << std::endl;
-    std::cout << CYAN "-----> LIST TEST" << std::endl;
+    std::cout << CYAN "## LIST TEST" << std::endl;
     std::cout << "Add 2, 17, 5, 47, 9 in list." << std::endl;
     std::cout << "Find element 47 in list" << std::endl;
     ;
@@ -42,13 +42,12 @@ int main(void)
         lst.push_back(47);
         lst.push_back(9);
 
-        for (int i = 0; i < 5; ++i)
-            std::cout << *easyfind(lst, 47) << " found" << std::endl;
+        std::cout << *easyfind(lst, 47) << " found" << std::endl;
+        std::cout << std::endl << CYAN "Find element 22 in list" << std::endl;
+        std::cout << *easyfind(lst, 22) << " found" << std::endl;
     }
     catch (const std::exception& e) {
-        std::cout << RED;
-        std::cout << "Error: Parameter not found!!!" << std::endl;
-        std::cout << RESET;
+        std::cout << RED << "Error: Parameter not found!!!" << std::endl;
     }
 
     std::cout << MAGENTA "-----> END OF TEST" RESET << std::endl;
