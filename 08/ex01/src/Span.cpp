@@ -1,4 +1,5 @@
 #include "Span.hpp"
+#include <limits>
 
 Span::Span(void) {}
 
@@ -47,8 +48,7 @@ int Span::shortestSpan(void)
     std::vector<int> sortVec = this->_vec;
     std::sort(sortVec.begin(), sortVec.end());
 
-    int minDistance = abs(*_vec.begin() - *(_vec.end() - 1));
-
+    int minDistance = std::numeric_limits<int>::max();
     for (size_t i = 1; i < sortVec.size(); ++i) {
         int distance = std::abs(sortVec[i] - sortVec[i - 1]);
         if (distance < minDistance)

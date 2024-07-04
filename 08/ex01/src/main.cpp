@@ -21,7 +21,7 @@ int main(void)
 
     testsOfSubject();
 
-    std::cout << MAGENTA "# DEFAULT TESTS" << std::endl;
+    std::cout << std::endl << MAGENTA "# DEFAULT TESTS" << std::endl;
     std::cout << CYAN "Create a Span with 5 spaces" << std::endl;
     std::cout << "Add 100, 2, 41, 17, 12 to Span" << std::endl << RESET;
     {
