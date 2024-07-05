@@ -82,12 +82,12 @@ int main(void)
 
     std::cout << "stack: ";
     while (itb != ite) {
-        ++itb;
         std::cout << *itb << " ";
+        ++itb;
     }
     std::cout << std::endl << std::endl;
 
-    std::cout << WHITE "-----> Test list";
+    std::cout << WHITE "Test list";
     std::cout << "Push 2, 17, 8" << std::endl;
     std::cout << "Display back os list" << std::endl;
     std::cout << YELLOW;
