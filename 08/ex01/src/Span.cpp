@@ -1,4 +1,5 @@
 #include "Span.hpp"
+
 #include <limits>
 
 Span::Span(void) {}
@@ -59,19 +60,18 @@ int Span::shortestSpan(void)
 
 int Span::longestSpan(void)
 {
-    if (_vec.size() < 2)
-        throw SpanIsOneOrNoneError();
+    int min = *std::min_element(_vec.begin(), _vec.end());
+    int max = *std::max_element(_vec.begin(), _vec.end());
 
-    return *std::max_element(_vec.begin(), _vec.end()) -
-           *std::min_element(_vec.begin(), _vec.end());
+    return max - min;
 }
 
 const char *Span::SpanIsFullError::what() const throw()
 {
-    return "Span is full!!!";
+    return "ERROR: Span is full.";
 }
 
 const char *Span::SpanIsOneOrNoneError::what() const throw()
 {
-    return "Span is empty or has only one element!!!";
+    return "ERROR: Span is empty or has only one element.";
 }

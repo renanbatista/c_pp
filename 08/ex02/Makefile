@@ -1,4 +1,4 @@
-NAME		= array
+NAME		= stack
 SRCS		= $(wildcard ./src/*.cpp)
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f

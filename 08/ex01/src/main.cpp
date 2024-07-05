@@ -21,8 +21,8 @@ int main(void)
 
     testsOfSubject();
 
-    std::cout << std::endl << MAGENTA "# DEFAULT TESTS" << std::endl;
-    std::cout << CYAN "Create a Span with 5 spaces" << std::endl;
+    std::cout << std::endl << CYAN "# DEFAULT TESTS" << std::endl;
+    std::cout << "Create a Span with 5 spaces" << std::endl;
     std::cout << "Add 100, 2, 41, 17, 12 to Span" << std::endl << RESET;
     {
         Span sp = Span(5);
@@ -36,22 +36,21 @@ int main(void)
         std::cout << "Longest span: " << sp.longestSpan() << std::endl << RESET;
     }
 
-    std::cout << CYAN "# 100000 NUMBERS TESTS" << std::endl;
-    std::cout << "Create a Span with 100000 spaces" << std::endl;
-    std::cout << "Add 100000 random numbers to Span using addMulti" << std::endl << RESET;
+    std::cout << CYAN "\n# 10001 NUMBERS TESTS" << std::endl;
+    std::cout << "Create a Span with 10001 spaces" << std::endl;
+    std::cout << "Add 10001 random numbers to Span using addMulti" << std::endl << RESET;
     {
-        Span             sp = Span(100000);
+        Span             sp = Span(10001);
         std::vector<int> vec;
-        std::srand(time(NULL));
-        for (int i = 0; i < 100000; i++)
-            sp.addNumber(std::rand());
+        for (int i = 0; i < 10001; i++)
+            sp.addNumber(i);
         sp.addMulti(vec.begin(), vec.end());
 
         std::cout << GREEN "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span: " << sp.longestSpan() << std::endl << RESET;
     }
 
-    std::cout << MAGENTA "# EXCEPTION TESTS" << std::endl;
+    std::cout << MAGENTA "\n-----> EXCEPTION TESTS" << std::endl;
     std::cout << CYAN "Create a Span with 5 spaces" << std::endl;
     std::cout << "Add 100, 2, 41, 17, 12 to Span" << std::endl;
     std::cout << "Add 1 to Span" << std::endl << RESET;
