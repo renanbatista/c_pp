@@ -60,6 +60,8 @@ int Span::shortestSpan(void)
 
 int Span::longestSpan(void)
 {
+    if (_vec.size() < 2)
+        throw SpanIsOneOrNoneError();
     int min = *std::min_element(_vec.begin(), _vec.end());
     int max = *std::max_element(_vec.begin(), _vec.end());
 
