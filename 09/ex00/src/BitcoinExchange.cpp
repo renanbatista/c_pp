@@ -71,12 +71,33 @@ bool BitcoinExchange::isValidDate(const std::string& date)
 {
     if (date.length() != 10)
         return false;
+
     for (size_t i = 0; i < date.length(); ++i) {
         if ((i == 4 || i == 7) && date[i] != '-')
             return false;
         if (i != 4 && i != 7 && !isdigit(date[i]))
             return false;
     }
+
+    int year = std::atoi(date.substr(0, 4).c_str());
+    int month = std::atoi(date.substr(5, 2).c_str());
+    int day = std::atoi(date.substr(8, 2).c_str());
+    if (month < 1 || month > 12)
+        return false;
+    if (day < 1 || day > 31)
+        return false;
+
+    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (month == 2) {
+        bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        if (isLeapYear) {
+            daysInMonth[1] = 29;
+        }
+    }
+
+    if (day > daysInMonth[month - 1])
+        return false;
+
     return true;
 }
 
@@ -108,6 +129,8 @@ void BitcoinExchange::start(const std::string& fileName)
     std::ifstream file(fileName.c_str());
     if (!file.is_open())
         throw std::runtime_error("could not open file.");
+    if (file.peek() == std::ifstream::traits_type::eof())
+        throw std::runtime_error("file is empty.");
 
     std::string line;
     std::getline(file, line);

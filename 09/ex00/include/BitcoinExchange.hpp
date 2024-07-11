@@ -7,6 +7,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <string>
+#include <stdlib.h>
 
 #include "format.hpp"
 
