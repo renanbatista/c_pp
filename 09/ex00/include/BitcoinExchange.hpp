@@ -14,13 +14,13 @@ class BitcoinExchange {
     private:
         std::map<std::string, float> _rates;
 
-        void  _loadDataBase();
-        void  _processDataBase(std::ifstream& file);
+        void  loadDataBase();
+        void  processDataBase(std::ifstream& file);
         void  checkHeader(const std::string& header, int type);
         void  trim(std::string& str);
         bool  isValidDate(const std::string& date);
         bool  isValidValue(const std::string& str, float& value);
-        float _getRate(const std::string& date);
+        float getRate(const std::string& date);
 
     public:
         BitcoinExchange();

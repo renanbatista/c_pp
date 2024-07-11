@@ -2,7 +2,7 @@
 
 BitcoinExchange::BitcoinExchange()
 {
-    _loadDataBase();
+    loadDataBase();
 }
 
 BitcoinExchange::~BitcoinExchange() {}
@@ -17,15 +17,15 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
     return *this;
 }
 
-void BitcoinExchange::_loadDataBase()
+void BitcoinExchange::loadDataBase()
 {
     std::ifstream file("data.csv");
     if (!file.is_open())
         throw std::runtime_error("could not open file.");
-    _processDataBase(file);
+    processDataBase(file);
 }
 
-void BitcoinExchange::_processDataBase(std::ifstream& file)
+void BitcoinExchange::processDataBase(std::ifstream& file)
 {
     std::string line;
     std::getline(file, line);
@@ -89,7 +89,7 @@ bool BitcoinExchange::isValidValue(const std::string& str, float& value)
     return true;
 }
 
-float BitcoinExchange::_getRate(const std::string& date)
+float BitcoinExchange::getRate(const std::string& date)
 {
     std::map<std::string, float>::iterator it = _rates.find(date);
     if (it != _rates.end())
@@ -130,7 +130,7 @@ void BitcoinExchange::start(const std::string& fileName)
                             std::cerr << "Error: too large a number." << std::endl;
                         }
                         else {
-                            float rate = _getRate(date);
+                            float rate = getRate(date);
                             std::cout << date << " => " << amount << " = " << amount * rate
                                       << std::endl;
                         }
