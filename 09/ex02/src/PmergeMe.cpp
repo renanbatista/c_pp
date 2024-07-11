@@ -7,10 +7,6 @@
 // vector).
 void PmergeMe::sort(int argc, char const* argv[])
 {
-    if (argc < 2) {
-        throw std::runtime_error("Usage: ./PmergeMe <number1> <number2> ...");
-    }
-
     for (int i = 1; i < argc; ++i) {
         char* end;
         long  val = std::strtol(argv[i], &end, 10);
@@ -75,7 +71,6 @@ void PmergeMe::mergeInsertionSort(std::list<int>& listData)
 {
     if (listData.size() <= 1)
         return;
-
     if (listData.size() <= 10) {
         insertionSort(listData);
     }
